@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CadastroAnimaisExercicio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90101c6691e1dc7542d693df48be1876a5757a19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4137b15c97d639f5da475b7c2f6cc9e10f1a21c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CadastroAnimaisExercicio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CadastroAnimaisExercicio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
