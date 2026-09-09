@@ -1,0 +1,15 @@
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\bin\Debug\net10.0\CadastroAnimaisExercicio.exe
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\bin\Debug\net10.0\CadastroAnimaisExercicio.deps.json
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\bin\Debug\net10.0\CadastroAnimaisExercicio.runtimeconfig.json
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\bin\Debug\net10.0\CadastroAnimaisExercicio.dll
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\bin\Debug\net10.0\CadastroAnimaisExercicio.pdb
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.AssemblyInfoInputs.cache
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.AssemblyInfo.cs
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.csproj.CoreCompileInputs.cache
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.sourcelink.json
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.dll
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\refint\CadastroAnimaisExercicio.dll
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.pdb
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\CadastroAnimaisExercicio.genruntimeconfig.cache
+C:\Users\Predo\source\repos\poo-pv\CadastroAnimaisExercicio\obj\Debug\net10.0\ref\CadastroAnimaisExercicio.dll
