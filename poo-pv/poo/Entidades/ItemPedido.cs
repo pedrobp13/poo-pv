@@ -8,6 +8,13 @@ public class ItemPedido
 
     public decimal ValorTotal => Qtd * Valor;
 
+    public ItemPedido(Produto produto, int qtd, decimal valor)
+    {
+        Produto = produto;
+        Qtd = qtd;
+        Valor = valor;
+    }
+
     public override string ToString() =>
         $"{Produto.Nome} | Qtd: {Qtd} | Unitário: {Valor:C} | Total: {ValorTotal:C}";
 }

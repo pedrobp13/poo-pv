@@ -61,12 +61,20 @@ public class Aplicacao
     private void CadastrarCliente()
     {
         ExibirTitulo("NOVO CLIENTE");
-        _clientes.Add(new Cliente
+        var nome = LerTexto("Nome: ");
+        var email = LerTexto("E-mail: ");
+        var telefone = LerTexto("Telefone: ");
+        var endereco = LerTexto("Endereço: ");
+
+        string mensagem = string.Empty;
+        var cliente = new Cliente(_proximoClienteId++, nome, email, telefone, endereco);
+        if (!cliente.ValidarCliente(mensagem))
         {
-            Id = _proximoClienteId++,
-            Nome = LerTexto("Nome: "),
-            Email = LerTexto("E-mail: ")
-        });
+            Mensagem(mensagem);
+            return;
+        }
+
+        _clientes.Add(cliente);
         Mensagem("Cliente cadastrado.");
     }
 
@@ -79,6 +87,8 @@ public class Aplicacao
 
         cliente.Nome = LerTexto($"Nome ({cliente.Nome}): ", cliente.Nome);
         cliente.Email = LerTexto($"E-mail ({cliente.Email}): ", cliente.Email);
+        cliente.Telefone = LerTexto($"Telefone ({cliente.Telefone}): ", cliente.Telefone);
+        cliente.Endereco = LerTexto($"Endereço ({cliente.Endereco}): ", cliente.Endereco);
         Mensagem("Cliente alterado.");
     }
 
@@ -132,12 +142,12 @@ public class Aplicacao
     private void CadastrarProduto()
     {
         ExibirTitulo("NOVO PRODUTO");
-        _produtos.Add(new Produto
-        {
-            Id = _proximoProdutoId++,
-            Nome = LerTexto("Nome: "),
-            Preco = LerDecimal("Preço: ")
-        });
+        var nome = LerTexto("Nome: ");
+        var preco = LerDecimal("Preço: ");
+        var estoque = LerInteiro("Estoque: ", minimo: 0);
+        var descricao = LerTexto("Descrição: ");
+
+        _produtos.Add(new Produto(_proximoProdutoId++, nome, preco, estoque, descricao));
         Mensagem("Produto cadastrado.");
     }
 
@@ -150,6 +160,8 @@ public class Aplicacao
 
         produto.Nome = LerTexto($"Nome ({produto.Nome}): ", produto.Nome);
         produto.Preco = LerDecimal($"Preço ({produto.Preco:C}): ", produto.Preco);
+        produto.Estoque = LerInteiro($"Estoque ({produto.Estoque}): ", produto.Estoque);
+        produto.Descricao = LerTexto($"Descrição ({produto.Descricao}): ", produto.Descricao);
         Mensagem("Produto alterado.");
     }
 
@@ -215,12 +227,9 @@ public class Aplicacao
         var cliente = BuscarCliente(LerInteiro("Id do cliente: "));
         if (cliente is null) { Mensagem("Cliente não encontrado."); return; }
 
-        var pedido = new Pedido
-        {
-            Id = _proximoPedidoId++,
-            Data = LerData("Data (dd/MM/aaaa, Enter = hoje): ", DateTime.Today),
-            Cliente = cliente
-        };
+        var data = LerData("Data (dd/MM/aaaa, Enter = hoje): ", DateTime.Today);
+        var observacao = LerTexto("Observação (Enter = vazio): ", string.Empty);
+        var pedido = new Pedido(_proximoPedidoId++, data, cliente, observacao);
 
         EditarItens(pedido);
         if (pedido.Itens.Count == 0)
@@ -246,6 +255,8 @@ public class Aplicacao
         var cliente = BuscarCliente(idCliente);
         if (cliente is not null) pedido.Cliente = cliente;
         else Console.WriteLine("Cliente inválido; o cliente atual foi mantido.");
+
+        pedido.Observacao = LerTexto($"Observação ({pedido.Observacao}): ", pedido.Observacao);
 
         EditarItens(pedido);
         Mensagem("Pedido alterado.");
@@ -286,15 +297,10 @@ public class Aplicacao
         {
             itemExistente.Qtd += qtd;
         }
-        else
-        {
-            pedido.Itens.Add(new ItemPedido
+            else
             {
-                Produto = produto,
-                Qtd = qtd,
-                Valor = produto.Preco
-            });
-        }
+                pedido.Itens.Add(new ItemPedido(produto, qtd, produto.Preco));
+            }
     }
 
     private static void AlterarItem(Pedido pedido)
